@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Talai Event</title>
+<meta name="description" content="Talai Event : plats marocains, box et pâtisseries pour vos événements. Commandez sur WhatsApp.">
+<meta name="theme-color" content="#16307a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🍽️%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Readex+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#16307a;--paper:#fffdf8;--ink:#1c2340;--muted:#5d6486;--sun:#f4b223;--mint:#3fb9a0;--rose:#e8557a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1b4a}}
+:root[data-theme="dark"]{--bg:#0e1b4a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:#fff;font-family:'Readex Pro',system-ui,sans-serif;line-height:1.7;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cpath d='M32 4l8 20 20 8-20 8-8 20-8-20L4 32l20-8z' fill='none' stroke='%23ffffff' stroke-opacity='.09' stroke-width='1.5'/%3E%3C/svg%3E")}
+h1,h2{font-family:'Reem Kufi','Readex Pro',serif}
+header{text-align:center;padding:18px 20px 30px}
+.langs{display:flex;gap:6px;justify-content:center;margin-bottom:26px}
+.langs button{font:inherit;color:#fff;opacity:.7;background:none;border:0;border-bottom:2px solid transparent;padding:4px 10px;cursor:pointer}
+.langs button[aria-pressed="true"]{opacity:1;border-color:var(--sun)}
+.star{width:44px;height:44px;fill:var(--sun)}
+header h1{margin:6px 0 4px;font-size:clamp(3.2rem,11vw,6rem);line-height:1.1;color:var(--sun);font-weight:700}
+header p{margin:0 auto;max-width:36ch;font-size:1.1rem;font-weight:300}
+nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:6px 16px 10px}
+nav button{font:inherit;font-weight:600;color:#fff;background:transparent;border:2px solid rgba(255,255,255,.4);border-radius:14px;padding:7px 18px;cursor:pointer}
+nav button[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:var(--ink)}
+button:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+main{max-width:1000px;margin:0 auto;padding:20px 18px;display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:28px}
+.item{background:var(--paper);color:var(--ink);border-radius:26px;padding:10px 10px 18px;cursor:pointer}
+.item:focus-visible{outline:3px solid var(--sun);outline-offset:4px}
+.arch{background:var(--c);border-radius:130px 130px 16px 16px;height:210px;display:grid;place-items:end center;padding-bottom:22px}
+.plate{width:132px;aspect-ratio:1;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:4.2rem;box-shadow:0 6px 0 rgba(28,35,64,.18),inset 0 0 0 9px #f2efe8}
+.body{padding:14px 10px 0}
+.row{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.row h2{margin:0;font-size:1.5rem;line-height:1.3}
+.price{font-weight:600;white-space:nowrap}
+.price small{font-weight:300;font-size:.8em}
+.body p{margin:6px 0 0;color:var(--muted);font-size:.95rem;line-height:1.6}
+.tag{display:inline-block;margin-top:10px;font-size:.88rem;color:var(--ink);border-bottom:3px solid var(--c)}
+footer{text-align:center;padding:30px 18px 18px;font-weight:300;opacity:.85}
+.note{width:fit-content;max-width:90%;margin:0 auto 100px;background:var(--sun);color:var(--ink);font-weight:600;padding:10px 22px;border-radius:14px;text-align:center}
+dialog{border:0;padding:12px;border-radius:30px;width:min(430px,92vw);background:var(--paper);color:var(--ink);font-family:inherit;overflow:auto;max-height:92vh}
+dialog::backdrop{background:rgba(10,20,60,.78)}
+.big{background:var(--c);border-radius:200px 200px 16px 16px;display:grid;place-items:end center;padding:46px 0 26px}
+.big .plate{width:min(210px,52vw);font-size:6.5rem}
+.dbody{padding:18px 10px 10px}
+.dbody p{color:var(--muted);margin:8px 0 0}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.opt{font:inherit;font-weight:600;border:2px solid var(--c);background:transparent;color:var(--ink);padding:5px 15px;border-radius:12px;cursor:pointer}
+.opt.on{background:var(--c)}
+.buy{display:flex;gap:12px;align-items:center;margin-top:20px}
+.qty,.lq{display:flex;align-items:center;gap:10px}
+.qty button,.lq button{font:inherit;font-weight:700;width:34px;height:34px;border-radius:10px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.add,.close{font:inherit;font-weight:600;padding:11px;border:0;border-radius:14px;background:var(--c);color:var(--ink);cursor:pointer}
+.add{flex:1;text-align:center;text-decoration:none}
+.cartbtn{width:100%;margin-top:12px;font:inherit;font-weight:600;padding:11px;border:0;border-radius:14px;background:var(--ink);color:var(--paper);cursor:pointer}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(10px)}}
+@keyframes fade{from{opacity:0}}
+@keyframes slide{from{opacity:0;transform:translateY(70px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.item{animation:rise .5s ease backwards}
+header h1{animation:rise .7s ease backwards}
+header p{animation:rise .7s .12s ease backwards}
+.star{animation:spin 28s linear infinite}
+.plate{transition:transform .3s ease}
+@media (hover:hover){.item:hover .plate{transform:translateY(-6px) rotate(-4deg)}}
+dialog[open]{animation:pop .3s ease}
+dialog[open]::backdrop{animation:fade .3s ease}
+.viewbar{animation:slide .4s ease}
+.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0}
+.gal::-webkit-scrollbar{display:none}
+.sl{flex:0 0 100%;scroll-snap-align:center;display:grid;place-items:end center;padding:46px 0 26px}
+.sl.ph{padding:0}
+.sl.ph img{width:100%;height:320px;object-fit:cover;display:block}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.dots i{width:10px;height:10px;border-radius:50%;background:var(--ink);opacity:.25;cursor:pointer;transition:opacity .2s}
+.dots i.on{opacity:1}
+.arch.ph{padding:0;display:block}
+.arch.ph img{width:100%;height:100%;object-fit:cover;border-radius:inherit;display:block}
+.cust{display:block;margin-top:14px;font-weight:600}
+.cust[hidden]{display:none}
+.np{font:inherit;width:96px;padding:6px 10px;border:2px solid var(--ink);border-radius:10px;background:transparent;color:var(--ink);margin-inline-start:8px}
+a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.contact{text-align:center;padding:14px 18px 0}
+.contact h3{margin:0 0 12px;font-family:'Reem Kufi','Readex Pro',serif;font-size:1.6rem;font-weight:500}
+.soc{display:flex;justify-content:center;gap:14px}
+.soc a{width:56px;height:56px;border-radius:16px;background:var(--sun);color:var(--ink);display:grid;place-items:center;transition:transform .2s}
+@media (hover:hover){.soc a:hover{transform:translateY(-3px) rotate(-4deg)}}
+.add,.cartbtn,.opt,.viewbar,nav button{transition:transform .15s,background .2s,border-color .2s}
+.add:active,.cartbtn:active,.opt:active,.viewbar:active,nav button:active{transform:scale(.95)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+.close{width:100%;margin-top:18px}
+.close.ghost{background:transparent;border:2px solid var(--ink);margin-top:10px}
+body:has(dialog[open]){overflow:hidden}
+.send{display:block;text-align:center;text-decoration:none}
+.ln{display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed var(--muted)}
+.lp{font-weight:600;min-width:3ch;text-align:end}
+.tot{margin-top:14px}
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;justify-content:center;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));pointer-events:none}
+.bar[hidden]{display:none}
+.viewbar{pointer-events:auto;font:inherit;font-weight:600;font-size:1.05rem;border:0;border-radius:16px;padding:13px 26px;background:var(--sun);color:var(--ink);box-shadow:0 6px 0 rgba(0,0,0,.3);cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+  <div class="langs" id="langs" role="group" aria-label="Language"></div>
+  <svg class="star" viewBox="0 0 40 40" aria-hidden="true"><rect x="8" y="8" width="24" height="24"/><rect x="8" y="8" width="24" height="24" transform="rotate(45 20 20)"/></svg>
+  <h1 id="t"></h1>
+  <p id="s"></p>
+</header>
+<nav id="tabs"></nav>
+<main id="grid"></main>
+<section class="contact"><h3 id="ct"></h3><div class="soc"><a href="https://www.instagram.com/dar_talai/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a id="wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-2-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z" fill="currentColor" stroke="none"/></svg></a></div></section>
+<footer id="f"></footer>
+<p class="note" id="nt"></p>
+<dialog id="dlg"></dialog>
+<dialog id="ord"></dialog>
+<div id="bar" class="bar" hidden></div>
+<script>
+const COL={all:'#f4b223',boxes:'#6fa8ff',starters:'#3fb9a0',couscous:'#f4b223',sweet:'#e8557a'};
+const L={
+ar:{n:'العربية',dir:'rtl',title:'طالعي ايفنت',sub:'مرحبا بكم في بيتنا. نطبخ لكم بحب، كما نطبخ لأهلنا.',foot:'مفتوح يوميا من 11:00 صباحا إلى 10:00 مساء · نطبخ لكم بكل حب · اسألونا عن الحساسية والأطباق النباتية',cur:'درهم',cats:{all:'الكل',boxes:'البوكسات',starters:'المقبلات',couscous:'الأطباق',sweet:'الحلويات'}},
+en:{n:'English',dir:'ltr',title:'Talai Event',sub:'Welcome to our home. We cook for you the way we cook for family.',foot:'Open daily 11:00 AM – 10:00 PM · Made fresh with love · Ask us about allergies and vegetarian options',cur:'MAD',cats:{all:'All',boxes:'Boxes',starters:'Starters',couscous:'Main Dishes',sweet:'Sweets'}},
+fr:{n:'Français',dir:'ltr',title:'Talai Event',sub:'Bienvenue chez nous. Nous cuisinons pour vous comme pour notre famille.',foot:'Ouvert tous les jours de 11h à 22h · Fait frais, avec amour · Demandez-nous pour les allergies et les plats végétariens',cur:'MAD',cats:{all:'Tout',boxes:'Box',starters:'Entrées',couscous:'Plats',sweet:'Douceurs'}}
+};
+// cat, emoji, price, then [name, description, tag] for ar, en, fr
+const I=[
+['boxes','📦',150,'ميني بوكس مالح','خمسة أطباق في علبة واحدة: ميني برغر، ميني بيتزا، بريوات، ميني بسطيلة، سيجار','للمناسبات','Salty Mini Box','Five treats in one box: mini burgers, mini pizza, briouats, mini pastilla and cigars','For events','Mini Box salé','Cinq bouchées dans une seule box : mini burgers, mini pizzas, briouates, mini pastilla et cigares','Pour vos événements'],
+['sweet','🧁',120,'ميني بوكس حلو','خمسة أطباق في علبة واحدة: ميني بسبوسة، ميني فلان، ميني كيك، ميني دونات، بسكويت اللوز','للمناسبات','Sweet Mini Box','Five treats in one box: mini basbousa, mini flan, mini cakes, mini donuts and almond cookies','For events','Mini Box sucré','Cinq douceurs dans une seule box : mini basbousa, mini flan, mini gâteaux, mini donuts et biscuits aux amandes','Pour vos événements'],
+['starters','🍅',30,'سلطة بريستيج','سلطتنا الخاصة، طازجة وسخية','طبق مميز','Prestige Salad','Our signature salad, fresh and generously served','Signature','Salade Prestige','Notre salade signature, fraîche et généreuse','Spécialité'],
+['couscous','🍚',90,'كسكس بالدجاج','كسكس بالدجاج والجزر والكوسة والقرع والحمص','طبق الجمعة','Chicken Couscous','Couscous with chicken, carrots, zucchini, pumpkin and chickpeas','Friday classic','Couscous au poulet','Couscous au poulet, carottes, courgettes, potiron et pois chiches','Classique du vendredi'],
+['couscous','🍚',90,'كسكس باللحم','كسكس باللحم والجزر والكوسة والقرع والحمص','طبق الجمعة','Meat Couscous','Couscous with meat, carrots, zucchini, pumpkin and chickpeas','Friday classic','Couscous à la viande','Couscous à la viande, carottes, courgettes, potiron et pois chiches','Classique du vendredi'],
+['couscous','🥕',90,'كسكس بالخضار','كسكس بالخضار الطرية والحمص','نباتي','Vegetable Couscous','Couscous with fresh vegetables and chickpeas','Vegetarian','Couscous aux légumes','Couscous aux légumes frais et pois chiches','Végétarien'],
+['couscous','🥧',80,'بسطيلة الدجاج','عجين رقيق بالدجاج واللوز والقرفة والسكر','حلو ومالح','Chicken Pastilla','Flaky pastry with chicken, almonds, cinnamon and sugar','Sweet and savory','Pastilla au poulet','Pâte feuilletée au poulet, amandes, cannelle et sucre','Sucré-salé'],
+['couscous','🥧',80,'بسطيلة السلمون','عجين رقيق محشو بالسلمون','من البحر','Salmon Pastilla','Flaky pastry filled with salmon','From the sea','Pastilla au saumon','Pâte feuilletée farcie au saumon','De la mer'],
+['couscous','🥧',80,'بسطيلة السمك','عجين رقيق محشو بالسمك','من البحر','Fish Pastilla','Flaky pastry filled with fish','From the sea','Pastilla au poisson','Pâte feuilletée farcie au poisson','De la mer'],
+['couscous','🍗',85,'رفيسة','دجاج بلدي مع العدس والحلبة فوق مسمن مقطع','طبق تقليدي','Rfissa','Country chicken with lentils and fenugreek over shredded msemen','Traditional','Rfissa','Poulet fermier aux lentilles et fenugrec sur du msemen émietté','Traditionnel'],
+['couscous','🍝',75,'سفة بالدجاج','شعرية مبخرة بالدجاج واللوز والقرفة','حلو ومالح','Chicken Safa','Steamed vermicelli with chicken, almonds and cinnamon','Sweet and savory','Safa au poulet','Vermicelle vapeur au poulet, amandes et cannelle','Sucré-salé'],
+['couscous','🍝',75,'سفة عادية','شعرية مبخرة باللوز والقرفة، بدون لحم','نباتي','Safa Normal','Steamed vermicelli with almonds and cinnamon, no meat','Vegetarian','Safa normale','Vermicelle vapeur aux amandes et à la cannelle, sans viande','Végétarien'],
+['couscous','🐟',95,'سمك','سمك طازج يُطهى عند الطلب','طازج','Fish','Fresh fish, cooked to order','Fresh','Poisson','Poisson frais, cuit à la commande','Frais'],
+['couscous','🍗',75,'دجاج','دجاج طري يُطهى عند الطلب','طري','Chicken','Tender chicken, cooked to order','Tender','Poulet','Poulet tendre, cuit à la commande','Tendre'],
+['couscous','🥩',90,'لحم','لحم عصيري يُطهى عند الطلب','شهي','Meat','Juicy meat, cooked to order','Hearty','Viande','Viande savoureuse, cuite à la commande','Copieux'],
+['sweet','🍨',25,'آيس كريم باللوز','آيس كريم كريمي بنكهة اللوز','منعش','Almond Ice Cream','Creamy ice cream with almond flavor','Cool treat','Glace aux amandes','Glace onctueuse parfumée à l’amande','Fraîcheur'],
+['sweet','🍮',20,'فلان','حلوى كريمية بالحليب والبيض مع صلصة الكراميل','حلوى مفضلة','Flan','Creamy milk and egg custard with caramel sauce','Favorite','Flan','Crème renversée au lait et aux œufs avec caramel','Coup de cœur'],
+['sweet','🍰',25,'كيك','قطعة كيك طرية تُقدّم طازجة','حلوى','Cake','A soft slice of cake, served fresh','Sweet treat','Gâteau','Une part de gâteau moelleux, servie fraîche','Douceur'],
+['sweet','🍯',20,'بسبوسة','كيك السميد المنقوع بالشراب','حلوى','Basbousa','Semolina cake soaked in sweet syrup','Sweet treat','Basbousa','Gâteau de semoule imbibé de sirop','Douceur']
+];
+const $=id=>document.getElementById(id),OFF={ar:3,en:6,fr:9},LI={ar:0,en:1,fr:2};
+const CL={ar:'إغلاق',en:'Close',fr:'Fermer'};
+const WA='212690874193'; // restaurant WhatsApp number with country code, digits only, e.g. 212600000000
+const UI={
+ar:{add:'اطلب الآن',cart:'أضف إلى السلة',order:'طلبك',total:'المجموع',send:'إرسال الطلب عبر واتساب',empty:'طلبك فارغ',clear:'مسح الطلب',view:'عرض السلة',msg:'طلب من طالعي ايفنت'},
+en:{add:'Order now',cart:'Add to cart',order:'Your order',total:'Total',send:'Send order on WhatsApp',empty:'Your order is empty',clear:'Clear order',view:'View cart',msg:'Order from Talai Event'},
+fr:{add:'Commander maintenant',cart:'Ajouter au panier',order:'Votre commande',total:'Total',send:'Envoyer la commande sur WhatsApp',empty:'Votre commande est vide',clear:'Vider la commande',view:'Voir le panier',msg:'Commande Talai Event'}
+};
+const PHOTOS={}; // add photos here, e.g. 'Rfissa':['images/rfissa1.jpg','images/rfissa2.jpg'] (key = English dish name)
+const pp=(a,b,c)=>[['8 أشخاص','8 people','8 personnes',a],['10 أشخاص','10 people','10 personnes',b],['12 شخصا','12 people','12 personnes',c]];
+const OPT={'Chicken Couscous':pp(600,720,840),'Meat Couscous':pp(600,720,840),'Vegetable Couscous':pp(600,720,840),'Rfissa':pp(560,680,800),'Chicken Safa':pp(520,630,740),'Safa Normal':pp(520,630,740),'Chicken Pastilla':pp(560,680,800),'Salmon Pastilla':pp(560,680,800),'Fish Pastilla':pp(560,680,800)};
+let lang='fr',cat='all',cart=[];
+function optsHtml(i){const op=OPT[i[6]];if(!op)return '';return `<div class='opts'>`+op.map((x,k)=>`<button type='button' class='opt${k?'':' on'}'>${x[LI[lang]]}${x[3]?' · '+x[3]:''}</button>`).join('')+`<button type='button' class='opt'>${CU[lang]}</button></div><label class='cust' hidden>${CQ[lang]} <input type='number' class='np' min='1' max='500' value='20' inputmode='numeric'></label>`}
+const FR={ar:'من',en:'from',fr:'dès'};
+const CU={ar:'عدد آخر',en:'Custom',fr:'Personnalisé'},CQ={ar:'كم عدد الأشخاص؟',en:'How many people?',fr:'Pour combien de personnes ?'},PE={ar:'أشخاص',en:'people',fr:'personnes'},CT={ar:'راسلنا',en:'Text us',fr:'Écrivez-nous'},NT={ar:'يرجى الطلب قبل 48 ساعة على الأقل',en:'Please order at least 48 hours in advance',fr:'Merci de commander au moins 48h à l’avance'};
+function priceHtml(i){const op=OPT[i[6]];return `${op?'<small>'+FR[lang]+'</small> ':''}${op?op[0][3]:i[2]} <small>${L[lang].cur}</small>`}
+function unit(c){const i=I[c.ix];return c.opt>=0?OPT[i[6]][c.opt][3]:i[2]}
+function total(){return cart.reduce((s,c)=>s+unit(c)*c.q,0)}
+function render(){
+  const T=L[lang],o=OFF[lang];
+  document.documentElement.lang=lang;document.documentElement.dir=T.dir;
+  document.title=T.title;bar();$('t').textContent=T.title;$('s').textContent=T.sub;$('f').textContent=T.foot;$('ct').textContent=CT[lang];$('nt').textContent=NT[lang];$('wa').href='https://wa.me/'+WA;
+  $('langs').innerHTML='';
+  ['fr','en','ar'].forEach(k=>{
+    const b=document.createElement('button');
+    b.textContent=L[k].n;b.setAttribute('aria-pressed',k===lang);
+    b.onclick=()=>{lang=k;render()};$('langs').appendChild(b);
+  });
+  $('tabs').innerHTML='';
+  Object.keys(T.cats).forEach(k=>{
+    const b=document.createElement('button');
+    b.textContent=T.cats[k];b.style.setProperty('--c',COL[k]);b.setAttribute('aria-pressed',k===cat);
+    b.onclick=()=>{cat=k;render()};$('tabs').appendChild(b);
+  });
+  $('grid').innerHTML='';
+  I.filter(i=>cat==='all'||i[0]===cat).forEach((i,n)=>{
+    const el=document.createElement('article');
+    el.className='item';el.style.animationDelay=Math.min(n,10)*55+'ms';el.style.setProperty('--c',COL[i[0]]);el.tabIndex=0;el.setAttribute('role','button');
+    el.onclick=()=>openDish(i);el.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openDish(i)}};
+    el.innerHTML=`<div class='arch${PHOTOS[i[6]]?' ph':''}'>${PHOTOS[i[6]]?`<img src='${PHOTOS[i[6]][0]}' alt='${i[o]}'>`:`<div class='plate' role='img' aria-label='${i[o]}'>${i[1]}</div>`}</div><div class='body'><div class='row'><h2>${i[o]}</h2><span class='price'>${priceHtml(i)}</span></div><p>${i[o+1]}</p><span class='tag'>${i[o+2]}</span></div>`;
+    $('grid').appendChild(el);
+  });
+}
+function slides(i){const p=PHOTOS[i[6]];return p&&p.length?p.map(s=>`<div class='sl ph'><img src='${s}' alt='${i[OFF[lang]]}'></div>`).join(''):`<div class='sl'><div class='plate' role='img' aria-label='${i[OFF[lang]]}'>${i[1]}</div></div>`}
+function dotsHtml(i){const p=PHOTOS[i[6]];return p&&p.length>1?`<div class='dots'>`+p.map((s,k)=>`<i class='${k?'':'on'}'></i>`).join('')+`</div>`:''}
+function openDish(i){
+  const o=OFF[lang],d=$('dlg');
+  d.style.setProperty('--c',COL[i[0]]);
+  d.innerHTML=`<div class='big gal'>${slides(i)}</div>${dotsHtml(i)}<div class='dbody'><div class='row'><h2>${i[o]}</h2><span class='price'>${priceHtml(i)}</span></div><p>${i[o+1]}</p><span class='tag'>${i[o+2]}</span>${optsHtml(i)}<div class='buy'><div class='qty'><button class='m' aria-label='-'>−</button><b class='n'>1</b><button class='p' aria-label='+'>+</button></div><a class='add' target='_blank' rel='noopener'>${UI[lang].add}</a></div><button class='cartbtn'>${UI[lang].cart}</button><button class='close ghost'>${CL[lang]}</button></div>`;
+  d.querySelector('.close').onclick=()=>d.close();
+  if(OPT[i[6]])d.querySelector('.price').innerHTML=OPT[i[6]][0][3]+' <small>'+L[lang].cur+'</small>';
+  const g=d.querySelector('.gal'),dt=[...d.querySelectorAll('.dots i')];
+  if(dt.length){g.onscroll=()=>{const k=Math.round(Math.abs(g.scrollLeft)/g.clientWidth);dt.forEach((x,j)=>x.classList.toggle('on',j===k))};dt.forEach((x,k)=>x.onclick=()=>g.children[k].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'}))}
+  d.onclick=e=>{const r=d.getBoundingClientRect();if(e.target===d&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))d.close()};
+  let q=1,sel=0;const n=d.querySelector('.n');
+  d.querySelectorAll('.opt').forEach((b,k)=>b.onclick=()=>{sel=k;d.querySelectorAll('.opt').forEach((x,j)=>x.classList.toggle('on',j===k));const cu=k>=OPT[i[6]].length;d.querySelector('.price').innerHTML=cu?'':OPT[i[6]][k][3]+' <small>'+L[lang].cur+'</small>';d.querySelector('.cust').hidden=!cu;d.querySelector('.cartbtn').hidden=cu;upd()});
+  d.querySelector('.m').onclick=()=>{q=Math.max(1,q-1);n.textContent=q;upd()};
+  d.querySelector('.p').onclick=()=>{q=Math.min(20,q+1);n.textContent=q;upd()};
+  const upd=()=>{const op=OPT[i[6]],cu=op&&sel>=op.length,opt=op?(cu?-2:sel):-1,u=opt>=0?op[opt][3]:i[2],o=OFF[lang],np=d.querySelector('.np');d.querySelector('.add').href='https://wa.me/'+WA+'?text='+encodeURIComponent(UI[lang].msg+'\n• '+i[o]+(opt>=0?' ('+op[opt][LI[lang]]+')':cu?' ('+Math.min(500,Math.max(1,parseInt(np.value)||1))+' '+PE[lang]+')':'')+(q>1?' ×'+q:'')+(cu?'':'\n'+UI[lang].total+': '+u*q+' '+L[lang].cur))};upd();
+  const npEl=d.querySelector('.np');if(npEl)npEl.oninput=upd;
+  d.querySelector('.cartbtn').onclick=()=>{const ix=I.indexOf(i),opt=OPT[i[6]]?sel:-1,f=cart.find(c=>c.ix===ix&&c.opt===opt);f?f.q+=q:cart.push({ix,opt,q});bar();d.close()};
+  d.showModal();
+}
+function bar(){
+  const n=cart.reduce((s,c)=>s+c.q,0),b=$('bar');b.hidden=!n;
+  if(!n){b.innerHTML='';return}
+  b.innerHTML=`<button class='viewbar'>${UI[lang].view} · ${n} · ${total()} ${L[lang].cur}</button>`;
+  b.firstChild.onclick=openCart;
+}
+function waUrl(){
+  const o=OFF[lang];
+  const t=UI[lang].msg+'\n'+cart.map(c=>{const i=I[c.ix];return '• '+i[o]+(c.opt>=0?' ('+OPT[i[6]][c.opt][LI[lang]]+')':'')+' ×'+c.q+' = '+unit(c)*c.q}).join('\n')+'\n'+UI[lang].total+': '+total()+' '+L[lang].cur;
+  return 'https://wa.me/'+WA+'?text='+encodeURIComponent(t);
+}
+function openCart(){
+  const T=UI[lang],o=OFF[lang],d=$('ord');
+  d.style.setProperty('--c','#f4b223');
+  const lines=cart.map((c,k)=>{const i=I[c.ix],op=c.opt>=0?' ('+OPT[i[6]][c.opt][LI[lang]]+')':'';return `<div class='ln'><span>${i[1]} ${i[o]}${op}</span><span class='lq'><button data-k='${k}' data-d='-1' aria-label='-'>−</button><b>${c.q}</b><button data-k='${k}' data-d='1' aria-label='+'>+</button></span><span class='lp'>${unit(c)*c.q}</span></div>`}).join('');
+  d.innerHTML=`<div class='dbody'><h2>${T.order}</h2>${cart.length?lines+`<div class='row tot'><b>${T.total}</b><span class='price'>${total()} <small>${L[lang].cur}</small></span></div><a class='close send' href='${waUrl()}' target='_blank' rel='noopener'>${T.send}</a><button class='close ghost clr'>${T.clear}</button>`:`<p>${T.empty}</p>`}<button class='close ghost cl'>${CL[lang]}</button></div>`;
+  d.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const k=+b.dataset.k;cart[k].q+=+b.dataset.d;if(cart[k].q<1)cart.splice(k,1);bar();openCart()});
+  const clr=d.querySelector('.clr');if(clr)clr.onclick=()=>{cart=[];bar();d.close()};
+  d.querySelector('.cl').onclick=()=>d.close();
+  d.onclick=e=>{const r=d.getBoundingClientRect();if(e.target===d&&(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom))d.close()};
+  if(!d.open)d.showModal();
+}
+render();
+</script>
+</body>
+</html>
